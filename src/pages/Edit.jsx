@@ -13,12 +13,12 @@ const Edit=()=>{
 
     const curDiaryItem = useDiary(params.id);
     
-    usePageTitle(`${params.id}번 일기 수정`);
+    usePageTitle(`${params.id}번 일기 수정`)
     const onClickDelete=()=>{
         if(
         window.confirm("일기를 정말 삭제할까요?")
         ) {
-            onDelete(params.id);
+            onDelete(Number(params.id));
             nav('/',{replace : true})
         }
     };
@@ -26,7 +26,7 @@ const Edit=()=>{
     const onSubmit=(input)=>{
         if(window.confirm("일기를 정말 수정할까요?"))
             {
-                onUpdate(params.id,input.createdDate.getTime(), input.emotionId, input.content
+                onUpdate(Number(params.id),input.createdDate.getTime(), input.emotionId, input.content
             );
             nav('/', {replace : true});
     };}

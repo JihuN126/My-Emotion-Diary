@@ -51,6 +51,7 @@ function reducer(state, action) {
       {
         nextState= state.filter((item)=>String(item.id) 
       !== String(action.id));
+      break;
       }
 
     default :
